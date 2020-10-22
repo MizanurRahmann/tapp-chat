@@ -2,9 +2,11 @@ import React from 'react';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import store from './redux/store';
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <Router>
         <Switch>
@@ -18,6 +20,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+    </Provider>
   );
 }
 
