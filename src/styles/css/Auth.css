@@ -1,0 +1,75 @@
+/* Auth */
+.auth{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.auth_image{
+    width: 40%;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.auth_image img{
+    transform: rotateY(180deg);
+}
+.auth_content{
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+/* Form */
+form{ width: 100%;}
+form h2{ 
+    font-family: bacalist; font-size: 40px; 
+    color: var(--green2);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0;
+}
+.input_div{
+    width: 60%; margin: auto; margin-top: 30px;
+    border: 1px solid #d9d9d9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex; align-items: center;
+
+}
+.input_div .inputDiv{
+    width: 100%;
+}
+.input_div input{
+    width: 100%;
+    border: none; outline: none;
+    padding: 10px 0px;
+    font-family: roboto; font-size: 18px;
+}
+.i i{ color: #d9d9d9; transition: .3s; padding: 0 10px 0 0;}
+
+.btn__submit{
+    display: block;
+    width: 60%; height: 50px;
+    margin: auto; margin-top: 40px; margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem; color: #fff;
+    outline: none; border: none;
+    background-image: linear-gradient(to right, var(--green), var(--green2));
+    text-transform: uppercase; background-size: 200%;
+    transform: .5s; cursor: pointer;
+}
+.btn__submit:hover{ background-image: linear-gradient(to right, var(--green2), var(--green-light)); }
+.textError{
+    width: 60%; margin: auto;
+    color: red; font-family: roboto;
+    margin-top: 10px;
+}
+.signup__link{ font-family: roboto; font-size: 18px;}
+.signup__link a{ font-family: robotoC; color: var(--green-dark); text-decoration: none; }
+.signup__link div:hover{ color: var(--blue-dark); }
