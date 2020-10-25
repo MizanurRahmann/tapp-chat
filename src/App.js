@@ -1,28 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import { auth } from './firebase/util';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import store from './redux/store';
-import {Provider} from 'react-redux';
+import {connect} from 'react-redux';
+import { setUser, clearUser, setLoading } from './redux/user/userAction';
+import ChatUi from './components/ChatUI/ChatUi';
 
-function App() {
+
+function App({userState, setUser, clearUser, setLoading}) {
+
+  useEffect(() => {
+    setLoading(true);
+    
+    auth.onAuthStateChanged(user => {
+      if(user){
+        setUser(user);
+      } else{
+        clearUser();
+      }
+    })
+  }, [])
+
   return (
-    <Provider store={store}>
     <div className="App">
       <Router>
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path='/'>
-          <main>
-            <p>Home</p>
-          </main>
-        </Route>
+            {
+              !userState.loading
+              ? <ChatUi currentUser={userState.currentUser}/>
+              : "Loading"
+            }
+          </Route>
         </Switch>
       </Router>
     </div>
-    </Provider>
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    userState: state.user,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+      setUser: (user) => dispatch(setUser(user)),
+      clearUser: () => {dispatch(clearUser())},
+      setLoading: () => {dispatch(setLoading())}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

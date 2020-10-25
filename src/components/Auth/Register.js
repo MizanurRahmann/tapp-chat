@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { auth, fdb } from '../../firebase/util';
+import md5 from 'md5';
 import '../../styles/css/Auth.css';
 import imageLink from '../../styles/res/image/friends.svg';
 
@@ -9,16 +11,11 @@ function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const history = useHistory()
 
-    //Registration logic
-    const register = event => {
-        event.preventDefault()
-        if(checkForm()){
-            console.log(email);
-        }
-    }
 
-    // Form validation function
+    // FORM VALIDATION FUNCTION
     const checkForm = () => {
         if(formEmpty()){
             setError('You have to fill all fields.');
@@ -30,7 +27,7 @@ function Register() {
         return true;
     }
 
-    // Check for empty input field
+    // CHECK FOR EMPTY INPUT FIELDS
     const formEmpty = () => {
         return !username ||
                !email ||
@@ -38,9 +35,48 @@ function Register() {
                !confirmPassword;
     }
 
-    // Check for password match
+    // CHECK FOR PASSWORD MATCHING
     const checkPassword = () => {
         return password !== confirmPassword
+    }
+    
+    //SAVE USER TO DATABASE
+    const saveUsers = createdUser => {
+        fdb.collection('Users').doc(createdUser.user.uid).set({
+            name: createdUser.user.displayName,
+            avatar: createdUser.user.photoURL
+        })
+    }
+
+    //REGISTRATION LOGIC
+    const register = event => {
+        event.preventDefault();
+
+        if(checkForm()){
+            setLoading(true);
+
+            auth.createUserWithEmailAndPassword(email, password)
+            .then(res => {
+                return res.user.updateProfile({
+                    displayName: username,
+                    photoURL: `https://gravatar.com/avatar/${md5(res.user.email)}?d=identicon`
+                })
+                .then(() => {
+                    setLoading(false);
+                    saveUsers(res);
+
+                })
+                .catch(error => {
+                    setError(error.message);
+                    setLoading(false);
+                    history.push('/');
+                })
+            })
+            .catch(err => {
+                setError(err.message); 
+                setLoading(false);
+            })
+        }
     }
 
 
@@ -117,9 +153,11 @@ function Register() {
                     </div>
                     
                     <small className="textError">{error}</small>
-
-                    {/* <input type="submit" className="btn__submit" value="Register" onClick={register} /> */}
-                    <button className="btn__submit" onClick={register}>Sign up</button>
+                    {
+                        !loading
+                        ? <button className="btn__submit" onClick={register}>Sign up</button>
+                        : <button className="btn__submit" style={{background: "#ccc"}}>Loading..</button>
+                    }
                     <div className="signup__link">
                         Already Have an account? <Link to="/login">Login here</Link>
                     </div>

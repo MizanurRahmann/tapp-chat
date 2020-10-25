@@ -1,11 +1,15 @@
-import firebase from "firebase";
-
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
-import "firebase/database";
 import config from "./config";
 
 firebase.initializeApp(config);
-firebase.analytics();
 
-export default firebase;
+const fdb = firebase.firestore();
+const rdb = firebase.database();
+const auth = firebase.auth();
+const storage = firebase.storage();
+
+export { fdb, rdb, auth, storage };
