@@ -3,6 +3,7 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import store from './redux/store';
+import {Provider} from 'react-redux';
 
 function App() {
   return (

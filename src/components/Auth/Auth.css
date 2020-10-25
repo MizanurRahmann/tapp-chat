@@ -1,0 +1,62 @@
+/* Auth */
+.auth{
+    display: flex;
+    flex-wrap: wrap;
+}
+.auth_image{
+    width: 40%;
+    height: 100vh;
+}
+.auth_content{
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+/* Form */
+form{ width: 100%;}
+form h2{ 
+    font-weight: 300;
+    font-size: 25px; 
+    text-align: center;
+    margin: 10px 0;
+}
+.input_div{
+    width: 60%; margin: auto; margin-top: 30px;
+    border-bottom: 3px solid #d9d9d9;
+    display: flex; align-items: center;
+}
+.input_div .inputDiv{
+    width: 100%;
+    background: transparent;
+}
+.input_div input{
+    width: 100%; background: transparent;
+    border: none; outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.i i{ color: #d9d9d9; transition: .3s; }
+
+.btn__submit{
+    display: block;
+    width: 60%; height: 50px;
+    margin: auto; margin-top: 40px;
+    border-radius: 10px;
+    font-size: 1.2rem; color: #fff;
+    outline: none; border: none;
+    background-image: linear-gradient(to right, var(--blue), var(--blue-dark), var(--blue));
+    text-transform: uppercase; background-size: 200%;
+    transform: .5s; cursor: pointer;
+}
+.btn__submit:hover{ background-position: right; }
+
+.textError{
+    width: 60%; margin: auto;
+    color: red;
+    margin-top: 10px;
+}
