@@ -1,0 +1,6 @@
+.tappChat{ display: flex; flex-wrap: wrap; }
+
+.leftside{width: 20%; height: calc(100vh - 70px); border-right: 1px solid #ccc; }
+.chat{ width: 50%; height: calc(100vh - 130px); overflow-y: scroll; scrollbar-width: none;}
+.chat::-webkit-scrollbar { display: none; }
+.rightside{ width: 30%; height: calc(100vh - 70px); border-left: 1px solid #ccc; }

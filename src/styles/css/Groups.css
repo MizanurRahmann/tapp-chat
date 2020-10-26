@@ -1,0 +1,25 @@
+.leftside .groups{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    height: calc(60vh - 70px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.leftside .members{ padding: 10px; height: calc(40vh - 10px); overflow-y: scroll; scrollbar-width: none; }
+.leftside .groups::-webkit-scrollbarm, .leftside .members::-webkit-scrollbar {display: none;}
+.leftside .groups, .leftside .members h2{ font-family: PT; margin-left: 5px; margin-bottom: 10px; }
+.leftside .groups p, .leftside .members p{
+    font-family: PT; font-size: 18px;
+    padding: 8px 16px; cursor: pointer; color: #444;
+    border-radius: 0 5px 5px 0;
+}
+.leftside .groups p:hover,
+.leftside .members p:hover{ background: #f1f1f1; }
+
+.leftside .groups .active,
+.leftside .members .active{ background: #f1f1f1; color: #158467; font-weight: bold;}
+
+.leftside .groups p span svg,
+.leftside .members p span svg{
+    width: 16px; height: 16px; margin-right: 8px;
+}

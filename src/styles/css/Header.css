@@ -1,0 +1,8 @@
+.header{ width: 100%; padding: 10px 40px; display: flex; border-bottom: 1px solid #ccc;}
+.logo_box{ width: 20%; }
+.logo_box .logo_image{ height: 40px; }
+.search_field{ width: 50% }
+.user_area{ width: 30%; display: flex; justify-content: flex-end; align-items: center; }
+.user_area .user_image{ width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; }
+.user_area svg{ width: 25px; height: 25px; color: #444; transition: .7s; cursor: pointer;}
+.user_area svg:hover{ transform: rotate(-46deg); }

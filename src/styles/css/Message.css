@@ -1,0 +1,12 @@
+.chat h1{
+    width: 50%; border-bottom: 1px solid #ccc;
+    padding: 10px 20px; position: absolute;
+    font-family: PT; font-size: 30px; background: #fff;
+
+}
+.chat h1 span{ font-size: 25px; }
+.messages{
+    padding: 20px; margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}

@@ -7,6 +7,9 @@
 @font-face{
   font-family: bacalist; src: url('./styles/res/font/RodwickPersonalUse-BWdD3.otf');
 }
+@font-face{
+  font-family: PT; src: url('./styles/res/font/PTSans-Regular.ttf');
+}
 :root{
   --green-dark: #065446;
   --green: #158467;
