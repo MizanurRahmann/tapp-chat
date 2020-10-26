@@ -17,7 +17,7 @@
 .leftside .members p:hover{ background: #f1f1f1; }
 
 .leftside .groups .active,
-.leftside .members .active{ background: #f1f1f1; color: #158467; font-weight: bold;}
+.leftside .members .active{ background: #f1f1f1; color: var(--green); font-weight: bold;}
 
 .leftside .groups p span svg,
 .leftside .members p span svg{

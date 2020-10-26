@@ -1,29 +1,20 @@
-@font-face{
-  font-family: roboto; src: url('./styles/res/font/Roboto-Regular.ttf');
-}
-@font-face{
-  font-family: robotoC; src: url('./styles/res/font/RobotoCondensed-Regular.ttf');
-}
-@font-face{
-  font-family: bacalist; src: url('./styles/res/font/RodwickPersonalUse-BWdD3.otf');
-}
-@font-face{
-  font-family: PT; src: url('./styles/res/font/PTSans-Regular.ttf');
-}
+/* FONTS */
+@font-face{ font-family: roboto; src: url('./styles/res/font/Roboto-Regular.ttf');}
+@font-face{ font-family: robotoC; src: url('./styles/res/font/RobotoCondensed-Regular.ttf'); }
+@font-face{ font-family: bacalist; src: url('./styles/res/font/RodwickPersonalUse-BWdD3.otf'); }
+@font-face{ font-family: PT; src: url('./styles/res/font/PTSans-Regular.ttf'); }
+
+/* VARIABLES */
 :root{
-  --green-dark: #065446;
-  --green: #158467;
-  --green2: #197163;
-  --green-light: #519872;
+  --green-dark: #008D6A;
+  --green: #00BF7E;
+  --green-secondary: #66D9AF;
+  --green-light: #04D98B;
 }
 
+/* STYLES FOR ALL TAGS */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

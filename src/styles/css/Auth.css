@@ -29,7 +29,7 @@
 form{ width: 100%;}
 form h2{ 
     font-family: bacalist; font-size: 40px; 
-    color: var(--green2);
+    color: var(--green);
     text-transform: uppercase;
     text-align: center;
     margin: 10px 0;
@@ -60,11 +60,11 @@ form h2{
     border-radius: 10px;
     font-size: 1.2rem; color: #fff;
     outline: none; border: none;
-    background-image: linear-gradient(to right, var(--green), var(--green2));
+    background-image: linear-gradient(to right, var(--green), var(--green-dark));
     text-transform: uppercase; background-size: 200%;
     transform: .5s; cursor: pointer;
 }
-.btn__submit:hover{ background-image: linear-gradient(to right, var(--green2), var(--green-light)); }
+.btn__submit:hover{ background-image: linear-gradient(to right, var(--green-light), var(--green)); }
 .textError{
     width: 60%; margin: auto;
     color: red; font-family: roboto;
@@ -72,4 +72,4 @@ form h2{
 }
 .signup__link{ font-family: roboto; font-size: 18px;}
 .signup__link a{ font-family: robotoC; color: var(--green-dark); text-decoration: none; }
-.signup__link div:hover{ color: var(--blue-dark); }
+.signup__link a:hover{ color: var(--green); }
