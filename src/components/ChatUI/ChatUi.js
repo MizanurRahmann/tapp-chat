@@ -10,7 +10,9 @@ function ChatUi(props) {
         <>
             <Header currentUser={props.currentUser}/>
             <div className="tappChat">
-                <div className="leftside"><Groups /></div>
+                <div className="leftside">
+                    <Groups currentUser={props.currentUser}/>
+                </div>
                 <div className="chat"><Message /></div>
                 <div className="rightside"><Info /></div>
             </div>
