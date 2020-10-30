@@ -7,6 +7,53 @@
 .chat h1 span{ font-size: 25px; }
 .messages{
     padding: 20px; margin-top: 50px;
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
+}
+
+/* MESSAGE */
+.message{ max-width: 70%; display: flex; margin-bottom: 20px;}
+.message .message_author{
+    width: 30px; height: 30px;
+    align-self: flex-end;
+}
+.message .message_author img{
+    width: 30px; height: 30px; border-radius: 50%;
+}
+.message .message_content{
+    background: #f1f1f1;
+    color: #000;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 0;
+    font-size: 16px; font-family: 'PT Sans', sans-serif;
+}
+.loggedInUserMessage{flex-direction: row-reverse;  align-self: flex-end; }
+.loggedInUserMessage .message_content{
+    margin-right: 5px; border-radius: 10px 10px 0 10px; background: #48B37A; color: #fff;
+}
+
+/* MESSAGE FIELD */
+.message_field{
+    width: 50%; background: #fff; padding: 10px;
+    position: absolute; bottom: 0; left: 20%;
+    display: flex; align-items: center;
+    /* border-top: 1px solid #ccc; */
+}
+.message_field .icon{
+    margin: 0 10px; font-size: 25px; color: #48B37A;
+}
+.message_field .icon div{
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #48B37A; color: #fff; font-size: 15px;
+    display: flex; justify-content: center; align-items: center;
+}
+.message_field .field{
+    width: 80%;
+    margin: auto;
+}
+.message_field .field textarea{
+    background: #F7F7F7; width: 100%; padding: 10px;
+    outline: none; border: 1px solid #ccc;
+    border-radius: 5px; font-size: 16px;
+    font-family: PT; font-size: 17px;
 }
