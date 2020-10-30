@@ -10,21 +10,22 @@
 .leftside .groups h2, .leftside .members h2{ font-size: 24px; line-height: 24px; font-family: PT; margin-left: 5px; margin-bottom: 10px; }
 .leftside .groups h2 span{ float: right; cursor: pointer; color: var(--green); }
 .leftside .groups h2 span:hover{ color: var(--green-dark); }
-.leftside .groups p, .leftside .members p{
+
+.leftside .groups a,
+.leftside .members p{
+    display: inline-block;
+    text-decoration: none; color: #444;
     font-family: PT; font-size: 18px;
-    padding: 8px 16px; cursor: pointer; color: #444;
+    padding: 8px 16px; cursor: pointer;
     border-radius: 0 5px 5px 0;
 }
-.leftside .groups p:hover,
-.leftside .members p:hover{ background: #f1f1f1; }
-
-.leftside .groups .active,
-.leftside .members .active{ background: #f1f1f1; color: var(--green); font-weight: bold;}
-
-.leftside .groups p span svg,
+.leftside .groups a span svg,
 .leftside .members p span svg{
     width: 16px; height: 16px; margin-right: 8px;
 }
+
+.leftside .members p:hover{ background: #f1f1f1; }
+.leftside .members .active{ background: #f1f1f1; color: var(--green); font-weight: bold;}
 
 /* modal */
 .modalBox{

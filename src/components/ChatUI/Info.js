@@ -1,11 +1,12 @@
 import React from 'react';
 import '../../styles/css/Info.css';
 
-function Info() {
+function Info({groupInfo}) {
+
     return (
         <>
             <div className="info_image"></div>
-            <h2>Developer Group</h2>
+            <h2>{groupInfo.name}</h2>
 
             {/* EDIT OPTIONS */}
             <div className="info_edit">
@@ -15,7 +16,12 @@ function Info() {
                 </div>
                 <div className="info_edit-item">
                     <div>Chnage color</div>
-                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></div>
+                    <div style={{color: `${groupInfo.color}`}}>
+                        <i 
+                            style={{padding: "5px", border: `1px solid ${groupInfo.color}`, borderRadius: '5px'}}
+                            className="fas fa-circle"
+                        ></i>
+                    </div>
                 </div>
                 <div className="info_edit-item">
                     <div>Chnage emoji</div>
