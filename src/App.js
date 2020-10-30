@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import { auth } from './firebase/util';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { setUser, clearUser, setLoading } from './redux/user/userAction';
 import ChatUi from './components/ChatUI/ChatUi';
@@ -25,7 +25,6 @@ function App({userState, setUser, clearUser, setLoading}) {
   return (
     <div className="App">
       <Router>
-        <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path='/'>
@@ -35,7 +34,13 @@ function App({userState, setUser, clearUser, setLoading}) {
               : "Loading"
             }
           </Route>
-        </Switch>
+          <Route exact path='/group/:groupId'>
+          {
+              !userState.loading
+              ? <ChatUi currentUser={userState.currentUser}/>
+              : "Loading"
+            }
+          </Route>
       </Router>
     </div>
   );
