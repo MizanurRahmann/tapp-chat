@@ -34,7 +34,6 @@ function ChatUi(props) {
             })
         }
     }, [groupId.groupId]);
-    console.log(groupMessage && groupMessage);
 
     return (
         <>
@@ -44,7 +43,12 @@ function ChatUi(props) {
                     <Groups currentUser={props.currentUser}/>
                 </div>
                 <div className="chat">
-                    <Message groupMessage={groupMessage} groupInfo={groupInfo} />
+                    <Message 
+                        currentUser={props.currentUser}
+                        groupMessage={groupMessage}
+                        groupInfo={groupInfo}
+                        groupId={groupId.groupId}
+                    />
                 </div>
                 <div className="rightside">
                     {

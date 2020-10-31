@@ -18,6 +18,7 @@
 }
 .message .message_author img{
     width: 30px; height: 30px; border-radius: 50%;
+    padding: 2px; border: 1px solid #ccc;
 }
 .message .message_content{
     background: #f1f1f1;
@@ -43,9 +44,10 @@
     margin: 0 10px; font-size: 25px; color: #48B37A;
 }
 .message_field .icon div{
-    width: 30px; height: 30px; border-radius: 50%;
-    background: #48B37A; color: #fff; font-size: 15px;
+    width: 50px; height: 50px; border-radius: 50%;
+    background: #48B37A; color: #fff; font-size: 20px;
     display: flex; justify-content: center; align-items: center;
+    cursor: pointer;
 }
 .message_field .field{
     width: 80%;
