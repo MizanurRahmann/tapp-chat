@@ -38,7 +38,7 @@ function ChatUi(props) {
 
     return (
         <>
-            <Header currentUser={props.currentUser}/>
+            <Header currentUser={props.currentUser} clearUser={props.clearUser}/>
             <div className="tappChat">
                 <div className="leftside">
                     <Groups currentUser={props.currentUser}/>

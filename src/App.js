@@ -25,19 +25,23 @@ function App({userState, setUser, clearUser, setLoading}) {
   return (
     <div className="App">
       <Router>
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route exact path='/'>
             {
               !userState.loading
-              ? <ChatUi currentUser={userState.currentUser}/>
+              ? userState.currentUser
+                ? <ChatUi currentUser={userState.currentUser} currentUser={clearUser}/>
+                : <Login />
               : "Loading"
             }
           </Route>
           <Route exact path='/group/:groupId'>
           {
               !userState.loading
-              ? <ChatUi currentUser={userState.currentUser}/>
+              ? userState.currentUser
+                ?<ChatUi currentUser={userState.currentUser}/>
+                : <Login />
               : "Loading"
             }
           </Route>
