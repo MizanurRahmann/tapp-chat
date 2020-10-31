@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../../firebase/util';
+import { useHistory } from 'react-router-dom'
 import '../../styles/css/Auth.css';
 import imageLink from '../../styles/res/image/inbox.svg';
 
 
 function Login() {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    //Login logic
+    // LOGIN FUNCTION LOGIC
     const login = event => {
-        event.preventDefault()
-        if(checkForm()){
-            
-        }
+        event.preventDefault();
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then(res => {
+                history.push('/');
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
 
-    // Form validation function
+    // FORM VALIDATION LOGIC
     const checkForm = () => {
         if(!email || !password){
             setError('You have to fill all fields.');

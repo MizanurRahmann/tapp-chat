@@ -31,7 +31,7 @@ function App({userState, setUser, clearUser, setLoading}) {
             {
               !userState.loading
               ? userState.currentUser
-                ? <ChatUi currentUser={userState.currentUser} currentUser={clearUser}/>
+                ? <ChatUi currentUser={userState.currentUser} clearUser={clearUser}/>
                 : <Login />
               : "Loading"
             }
@@ -40,7 +40,7 @@ function App({userState, setUser, clearUser, setLoading}) {
           {
               !userState.loading
               ? userState.currentUser
-                ?<ChatUi currentUser={userState.currentUser}/>
+                ?<ChatUi currentUser={userState.currentUser} clearUser={clearUser}/>
                 : <Login />
               : "Loading"
             }
