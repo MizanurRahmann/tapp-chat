@@ -44,12 +44,8 @@ function ChatUi(props) {
                     <Groups currentUser={props.currentUser}/>
                 </div>
                 <div className="chat">
-                    {
-                        groupMessage.length > 0 
-                        ? <Message groupMessage={groupMessage} groupInfo={groupInfo} />
-                        : "Loading"
-                    }
-                    </div>
+                    <Message groupMessage={groupMessage} groupInfo={groupInfo} />
+                </div>
                 <div className="rightside">
                     {
                         groupInfo

@@ -4,7 +4,7 @@ import '../../styles/css/Message.css';
 function Message({ groupMessage, groupInfo }) {
     return (
         <>
-            <h1><span><i className="fab fa-slack-hash"></i></span> {groupInfo.name}</h1>
+            <h1><span><i className="fab fa-slack-hash"></i></span> {groupInfo?.name}</h1>
 
             <div className="messages">
                 {/* message  */}
