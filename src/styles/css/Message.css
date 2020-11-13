@@ -41,7 +41,7 @@
     /* border-top: 1px solid #ccc; */
 }
 .message_field .icon{
-    margin: 0 10px; font-size: 25px; color: #48B37A;
+    margin: 0 10px; font-size: 25px; color: #48B37A; cursor: pointer;
 }
 .message_field .icon div{
     width: 50px; height: 50px; border-radius: 50%;
@@ -58,4 +58,10 @@
     outline: none; border: 1px solid #ccc;
     border-radius: 5px; font-size: 16px;
     font-family: PT; font-size: 17px;
+}
+
+.emojiPickerr{
+    padding: 10px; z-index: 1000; background: #fff;
+    position: absolute; bottom: 10%; right: 37%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }

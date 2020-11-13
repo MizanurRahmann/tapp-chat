@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
 import { fdb } from '../../firebase/util';
+import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
 import '../../styles/css/Message.css';
 
 function Message({ currentUser, groupMessage, groupInfo, groupId }) {
     const [message, setMessage] = useState('');
+    const [emojiOpen, setEmojiOpen] = useState(false);
+ 
+    //WRITE EMOJI TO TEXTAREA
+    const onEmojiClick = (event, emojiObject) => {
+        setMessage(message + emojiObject.emoji);
+    };
 
     // SEND MESSAGE LOGIC
     const submitMessage = () => {
@@ -20,6 +27,7 @@ function Message({ currentUser, groupMessage, groupInfo, groupId }) {
                     avatar: currentUser.photoURL
                 }
             })
+            setEmojiOpen(false);
             setMessage('');
         }
     }
@@ -58,14 +66,24 @@ function Message({ currentUser, groupMessage, groupInfo, groupId }) {
                         placeholder="Type a message ...."
                         value={message}
                         onChange={e => setMessage(e.target.value)}
+                        onFocus={() => setEmojiOpen(false)}
                     >
                     </textarea>
                 </div>
-                <div className="icon"><i className="far fa-smile"></i></div>
+                <div className="icon" onClick={e => setEmojiOpen(!emojiOpen)}><i className="far fa-smile"></i></div>
                 <div className="icon" onClick={submitMessage}>
                     <div><i className="far fa-paper-plane"></i></div>
                 </div>
             </div>
+
+            {/* emoji Picker field */}
+            {
+                emojiOpen
+                ? <div className="emojiPickerr">
+                    <Picker onEmojiClick={onEmojiClick} skinTone={SKIN_TONE_MEDIUM_DARK} />
+                  </div>
+                : null
+            }
         </>
     )
 }
